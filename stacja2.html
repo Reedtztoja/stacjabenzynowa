@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stacja benzynowa</title>
+</head>
+
+<body>
+    <div id="Z" class="S">
+        <h1>Stacja benzynowa</h1>
+        <div>
+            <h3>Wybierz rodzaj paliwa</h3>
+        </div>
+        <div>
+            <input type="radio" id="benzyna" name="tank" value="paliwo">
+            <label for="benzyna">Benzyna : 6,70zl</label>
+            <input type="radio" id="ropa" name="tank" value="paliwo">
+            <label for="ropa"> Ropa : 7,50zl </label>
+        </div>
+        <div>
+            <p>Wpisz ile litrow zatankowales:</p>
+            <input type="text" id="litry">
+            <div>
+            <button onclick="oblicz()">oblicz</button>
+        </div>
+            <p>Cena wynosi:</p>
+            <p id="wynik"></p>
+        </div>
+
+    </div>
+    <script>
+
+        function oblicz() {
+
+            var paliwo = document.getElementById("litry").value;
+            let r = document.getElementById("ropa").checked;
+            let b = document.getElementById("benzyna").checked;
+            if (r == true) {
+                let cena = paliwo * 7.5;
+                document.getElementById("wynik").innerHTML = cena;
+            }
+            else if (b == true) {
+                let cena = paliwo * 6.7;
+                document.getElementById("wynik").innerHTML = cena;
+            }
+        }
+
+    </script>
+</body>
+<style>
+.S {
+    text-align: center;
+    padding: 400px;
+    background-color: beige;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+</style>
+</html>
